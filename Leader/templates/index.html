@@ -1,0 +1,175 @@
+<!--------------------------
+The module consists Api's & Functions for managing activities of client
+------------------------
+Coded by: Safe and strong  IT Team
+© Safe and strong Business Pvt Ltd
+-------------------------->
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" href=" static/home/img/logo1.png"/>
+    <title>SAFE AND STRONG | ADMIN PANEL</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" /> <!-- https://fonts.google.com/ -->
+    <link href="static/home/css/bootstrap.min.css" rel="stylesheet" /> <!-- https://getbootstrap.com/ -->
+    <link href="static/home/fontawesome/css/all.min.css" rel="stylesheet" /> <!-- https://fontawesome.com/ -->
+    <link href="static/home/css/templatemo-diagoona.css" rel="stylesheet" />
+<!--
+
+
+
+-->
+</head>
+<style>
+    .button {
+        background-color: white; /* Green */
+        border: none;
+        color: black;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+      .button3 {border-radius: 8px;}
+    </style>
+
+<body>
+    
+    <div class="tm-container">
+        <div>  
+            <div class="tm-row pt-4">
+                <div class="tm-col-left">
+                    <div class="tm-site-header media">
+                        <i class="fas fa- fa-3x mt-1 tm-logo"></i>
+                        <div class="media-body">
+                            <h1 class="tm-sitename text-uppercase">Safe & Strong</h1>
+                            <p class="tm-slogon">IT SOLUTIONS</p>
+                        </div>        
+                    </div>
+                    <form action="single" method="POST">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+
+                       
+                        {% csrf_token %}
+                            <center>
+                               <input type="text" id="empid" placeholder="EMP ID" name="empid">
+                               <input type="text" id="name" placeholder="NAME" name="name">
+                               <input type="text" id="department" placeholder="DEPARTMENT" name="department">
+                               <br>
+                               <br>
+                                From : <input type="date" name="fromdate">
+                                 To : <input type="date" name="todate">
+                                 <br>
+                                 <br>
+                                <input type="submit" value="search">
+                            </center>
+                                           </form>
+                </div>
+                <div class="tm-col-right">
+                    <nav class="navbar navbar-expand-lg" id="tm-main-nav">
+                        <button class="navbar-toggler toggler-example mr-0 ml-auto" type="button" 
+                            data-toggle="collapse" data-target="#navbar-nav" 
+                            aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span><i class="fas fa-bars"></i></span>
+                        </button>
+                        <div class="collapse navbar-collapse tm-nav" id="navbar-nav">
+                            <ul class="navbar-nav text-uppercase">
+                                <li class="nav-item active">
+                                    <a class="nav-link tm-nav-link" href="/login">Home <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link tm-nav-link" href="/superlogin">Admin</a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link tm-nav-link" href="/contact">Contact Us</a>
+                                </li>
+                            </ul>                            
+                        </div>                        
+                    </nav>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+                    {% csrf_token %}
+                                  
+                                  
+                
+                                  <h1><button class="button "> <a id="add employee" href="register"><i class="material-icons"></i> <strong>ADD EMPLOYEE +</a></h1></button>
+                                    <h1><button class="button "> <a id="add employee" href="/detail"><i class="material-icons"></i> <strong>View Report</strong></a></h1></button>
+                </div>
+
+
+
+                
+            </div>
+            
+            <div class="tm-row">
+                <div class="tm-col-left"></div>
+                <main class="tm-col-right">
+                    <section class="tm-content">
+                        <div class="col-md-5 contents">
+                            <div class="form-block">
+                            <div class="mb-4">
+                                  <!-- <h3>Employee <strong>Login</strong></h3> -->
+                                  <p class="mb-4"></p>
+                                </div>
+								
+                                  
+                                <!-- </form> -->
+                                <br>
+                                <br>
+                                
+                              </div>
+                          </div>                       
+                        
+                    </section>
+                </main>
+            </div>
+        </div>        
+
+        <div class="tm-row">
+            <div class="tm-col-left text-center">            
+                   
+            </div>         
+            <div class="tm-col-right tm-col-footer">
+                <footer class="tm-site-footer text-right">
+                    <p class="mb-0">Copyright 2021 SSIT |  
+                    
+                    | Deliverd By: <a rel="nofollow" target="_parent" href="https://ssbcit.mobirisesite.com/" class="tm-text-link">Safe and Strong IT Team</a></p>
+                </footer>
+            </div>  
+        </div>
+
+        
+        <!-- <div class="tm-bg">
+            <div class="tm-bg-left"></div>
+            <div class="tm-bg-right"></div>
+        
+    </div> -->
+    </div>
+    
+
+
+    <script src="static/home/js/jquery-3.4.1.min.js"></script>
+    <script src="static/home/js/bootstrap.min.js"></script>
+    <script src="static/home/js/jquery.backstretch.min.js"></script>
+    <script src="static/home/js/templatemo-script.js"></script>
+</body>
+</html>

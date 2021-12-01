@@ -1,0 +1,192 @@
+<!--------------------------
+The module consists Api's & Functions for managing activities of client
+------------------------
+Coded by: Safe and strong  IT Team
+© Safe and strong Business Pvt Ltd
+-------------------------->
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" href=" static/home/img/logo1.png"/>
+    <title>SAFE AND STRONG | ADMIN PANEL</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" /> <!-- https://fonts.google.com/ -->
+    <link href="static/home/css/bootstrap.min.css" rel="stylesheet" /> <!-- https://getbootstrap.com/ -->
+    <link href="static/home/fontawesome/css/all.min.css" rel="stylesheet" /> <!-- https://fontawesome.com/ -->
+    <link href="static/home/css/templatemo-diagoona.css" rel="stylesheet" />
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static 'addemp/images/icons' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'addemp/vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'addemp/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'addemp/fonts/Linearicons-Free-v1.0.0/icon-font.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'addemp/vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'addemp/vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'addemp/vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'addemp/css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'addemp/css/main.css' %}">
+<!--===============================================================================================-->
+</head>
+<body>
+
+	<body style="background-color:gray">
+
+
+	<div>  
+		<div class="tm-row pt-4">
+			<div class="tm-col-left">
+				<div class="tm-site-header media">
+					<i class="fas fa- fa-3x mt-1 tm-logo"></i>
+					<div class="media-body">
+						<h1 class="tm-sitename text-uppercase">Safe & Strong</h1>
+						<p class="tm-slogon">IT SOLUTIONS</p>
+					</div>        
+				</div>
+			</div>
+			<div class="tm-col-right">
+				<nav class="navbar navbar-expand-lg" id="tm-main-nav">
+					<button class="navbar-toggler toggler-example mr-0 ml-auto" type="button" 
+						data-toggle="collapse" data-target="#navbar-nav" 
+						aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
+						<span><i class="fas fa-bars"></i></span>
+					</button>
+					<div class="collapse navbar-collapse tm-nav" id="navbar-nav">
+						<ul class="navbar-nav text-uppercase">
+							<li class="nav-item active">
+								<a class="nav-link tm-nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link tm-nav-link" href="/superlogin">Admin</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link tm-nav-link" href="{% static 'home/services.html' %}">About</a>
+							</li>                            
+							<li class="nav-item">
+								<a class="nav-link tm-nav-link" href="/contact">Contact</a>
+							</li>
+						</ul>                            
+					</div>                        
+				</nav>
+			</div>
+		</div>
+		
+		
+	</div>
+	
+
+
+
+
+<center>
+
+
+	<div class="limiter">
+		<div class="container-login">
+			<div class="wrap-login100 p-l-50 p-r-50 p-t-26 p-b-50">
+				<form action="register" method="POST">
+					{% csrf_token %}
+					<span class="login100-form-title p-b-15">
+						Add Employee
+					</span>
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "name">
+						<input class="input100" type="text" name="name" placeholder="Enter Your Name" required>
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<span class="lnr lnr-user"></span>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Mobile number is required">
+						<input class="input100" type="tel" name="phno" placeholder="Enter Your mobile number" pattern="[0-9]{10}" required >
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<span class="lnr lnr-phone-handset"></span>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "department is required">
+						<input class="input100" type="text" name="department" placeholder="Enter your department"required>
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<span class="lnr lnr-file-add"></span>
+						</span>
+					</div>
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Designation is required">
+						<input class="input100" type="text" name="designation" placeholder="Enter your Designation" required>
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<span class="lnr lnr-enter"></span>
+						</span>
+					</div>
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "employee id is required">
+						<input class="input100" type="character" name="empid" placeholder="Enter your employee id" required>
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<span class="lnr lnr-users"></span>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
+						<input class="input100" type="password" name="psw" placeholder="Password" required>
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<span class="lnr lnr-lock"></span>
+						</span>
+					</div>
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
+						<input class="input100" type="password" name="cpsw" placeholder="Confirm Password" required>
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<span class="lnr lnr-lock"></span>
+						</span>
+					</div>
+
+					<div class="container-login100-form-btn p-t-10">
+						<button class="login100-form-btn">
+							
+					
+							Create Employee
+						</button>
+						
+					</div>
+
+					
+				</form>
+			</div>
+		</div>
+	</div>
+	</center>
+	
+
+	
+
+
+<!--===============================================================================================-->
+	<script src="{% static 'addemp/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'addemp/vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'addemp/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'addemp/vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'addemp/js/main.js' %}"></script>
+
+	<script src="static/home/js/jquery-3.4.1.min.js"></script>
+    <script src="static/home/js/bootstrap.min.js"></script>
+    <script src="static/home/js/jquery.backstretch.min.js"></script>
+    <script src="static/home/js/templatemo-script.js' %}"></script>
+
+</body>
+</html>

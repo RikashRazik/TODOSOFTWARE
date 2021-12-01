@@ -1,0 +1,313 @@
+<!--------------------------
+The module consists Api's & Functions for managing activities of client
+------------------------
+Coded by: Safe and strong  IT Team
+© Safe and strong Business Pvt Ltd
+-------------------------->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href=" static/home/img/logo1.png"/>
+<title>SAFE AND STRONG | WORKLOG</title>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" /> <!-- https://fonts.google.com/ -->
+    <link href="static/home/css/bootstrap.min.css" rel="stylesheet" /> <!-- https://getbootstrap.com/ -->
+    <link href="static/home/fontawesome/css/all.min.css" rel="stylesheet" /> <!-- https://fontawesome.com/ -->
+    <link href="static/home/css/templatemo-diagoona.css" rel="stylesheet" />
+<style>
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 2px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  margin: 8px 0;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(66, 65, 65);
+}
+
+tr:nth-child(odd)
+{background-color:  rgb(66, 65, 65) ;
+}
+
+th
+{background-color: rgb(32, 31, 31) ;
+
+}
+
+.registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+  opacity: 0.9;
+
+}
+
+
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+
+
+.button {
+    background-color: green; /* Green */
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  .button3 {border-radius: 8px;}
+</style>
+</head>
+<body>
+
+
+  <div class="tm-row pt-4">
+    <div class="tm-col-left">
+        <div class="tm-site-header media">
+            <i class="fas fa- fa-3x mt-1 tm-logo"></i>
+            <div class="media-body">
+                <h1 class="tm-sitename text-uppercase">Safe & Strong</h1>
+                <p class="tm-slogon">IT SOLUTIONS</p>
+            </div>        
+        </div>
+    </div>
+    <div class="tm-col-right">
+        <nav class="navbar navbar-expand-lg" id="tm-main-nav">
+            <button class="navbar-toggler toggler-example mr-0 ml-auto" type="button" 
+                data-toggle="collapse" data-target="#navbar-nav" 
+                aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span><i class="fas fa-bars"></i></span>
+            </button>
+            <div class="collapse navbar-collapse tm-nav" id="navbar-nav">
+                <ul class="navbar-nav text-uppercase">
+                    <li class="nav-item active">
+                        <a class="nav-link tm-nav-link" href="/login">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link tm-nav-link" href="/superlogin">Admin</a>
+                    </li>
+                                                
+                    <li class="nav-item">
+                        <a class="nav-link tm-nav-link" href="/contact">Contact Us</a>
+                    </li>
+                </ul>                            
+            </div>                        
+        </nav>
+    </div>
+</div>
+  
+
+
+
+
+
+<h2 align="center">WORK LOG</h2>
+<h3 align="center">EMPID:{{ empid }}</h3>
+
+
+
+
+<form action="work" method="POST" onsubmit="return confirm ('Your Daily Log Submitted Successfully')">
+    {% csrf_token%}
+
+    <input  type="hidden" id="code" name="code" value="{{empid}}">
+    <center>
+    <p id="date"></p>
+<script>
+document.getElementById("date").innerHTML = Date();
+</script></center>
+  
+<input type="hidden" name="currentdate" id="todayDate">
+
+<script type="text/javascript">
+function getDate()
+{
+    var today = new Date();
+    
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0!
+    var yyyy = today.getFullYear();
+    if(dd<10){dd='0'+dd} if(mm<10){mm='0'+mm}
+    today = yyyy+"-"+mm+"-"+dd;
+
+    document.getElementById("todayDate").value = today;
+}
+
+
+getDate();
+</script>
+
+
+<div class="container">
+
+
+  <table>
+  <tr>
+    <th><center><h6>TIME</h6></center></th>
+    <th><center><h6>JOB DESCRIPTION</h6></center></th>
+    <th><center><h6>REMARKS</h6></center></th>
+  </tr>
+  <tr>
+  <td align="center">09.30 AM  10.30 AM</td>
+  <td>
+<textarea id="hour1" name="hour1" rows="6" cols="130" minlength="15" required>
+
+  </textarea>
+ </td>
+ <td>
+<textarea id="r1" name="r1" rows="6" cols="30" class="remarks" >
+
+  </textarea>
+ </td>
+  </tr>
+
+    <tr>
+   <td align="center">10.30 AM  11.30 AM</td>
+   <td><textarea id="hour2" name="hour2" rows="6" cols="130" minlength="15" required >
+
+  </textarea></td>
+<td>
+<textarea id="r2" name="r2" rows="6" cols="30" class="remarks">
+
+  </textarea>
+ </td>
+   </tr>
+
+    <tr><td align="center">11.30 AM  12.30 PM</td>
+    <td><textarea id="hour3" name="hour3" rows="6" cols="130" minlength="15" required  >
+
+  </textarea></td>
+  <td>
+<textarea id="r3" name="r3" rows="6" cols="30" class="remarks">
+
+  </textarea>
+ </td>
+</tr>
+     <tr><td align="center">12.30 PM  01.30 PM</td>
+     <td><textarea id="hour4" name="hour4" rows="6" cols="130" minlength="15" required >
+
+  </textarea></td>
+  <td>
+<textarea id="r4" name="r4" rows="6" cols="30" class="remarks">
+
+  </textarea>
+ </td>
+</tr>
+<tr>
+   <td align="center">01.30 PM  02.30 PM</td>
+   <td><textarea id="hour5" name="hour5" rows="6" cols="130" minlength="15" required>
+
+  </textarea></td>
+  <td>
+<textarea id="r5" name="r5" rows="6" cols="30" class="remarks">
+  </textarea>
+ </td>
+   </tr>
+    <tr><td align="center">02.30 PM  03.30 PM</td>
+    <td><textarea id="hour6" name="hour6" rows="6" cols="130" minlength="15" required>
+
+  </textarea></td>
+  <td>
+<textarea id="r6" name="r6" rows="6" cols="30" class="remarks">
+
+  </textarea>
+ </td>
+</tr>
+     <tr><td align="center">03.30 PM  04.30 PM</td>
+    <td><textarea id="hour7" name="hour7" rows="6" cols="130" minlength="15" required>
+
+  </textarea></td>
+  <td>
+<textarea id="r7" name="r7" rows="6" cols="30" class="remarks">
+  </textarea>
+ </td>
+</tr>
+<tr><td align="center">04.30 PM  05.30 PM</td>
+    <td><textarea id="hour8" name="hour8" rows="6" cols="130" minlength="15" required>
+
+  </textarea></td>
+  <td>
+<textarea id="r8" name="r8" rows="6" cols="30" class="remarks">
+
+  </textarea>
+ </td>
+</tr>
+
+</table>
+</div>
+    <p align="center">
+<button class="button button3" type="submit" ><i>SUBMIT</i></button>
+</p>
+  </form>
+
+<script src="static/home/js/jquery-3.4.1.min.js"></script>
+    <script src="static/home/js/bootstrap.min.js"></script>
+    <script src="static/home/js/jquery.backstretch.min.js"></script>
+    <script src="static/home/js/templatemo-script.js' %}"></script>
+</body>
+</html>

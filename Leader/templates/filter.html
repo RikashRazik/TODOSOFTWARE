@@ -1,0 +1,242 @@
+<!--------------------------
+The module consists Api's & Functions for managing activities of client
+------------------------
+Coded by: Safe and strong  IT Team
+© Safe and strong Business Pvt Ltd
+-------------------------->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href=" static/home/img/logo1.png"/>
+<title>SAFE AND STRONG | HOME</title>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" /> <!-- https://fonts.google.com/ -->
+    <link href="static/home/css/bootstrap.min.css" rel="stylesheet" /> <!-- https://getbootstrap.com/ -->
+    <link href="static/home/fontawesome/css/all.min.css" rel="stylesheet" /> <!-- https://fontawesome.com/ -->
+    <link href="static/home/css/templatemo-diagoona.css" rel="stylesheet" />
+<style>
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #10c07f;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #95bd97;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  margin: 8px 0;
+}
+
+tr:nth-child(even) {
+  background-color: #d8e7dc;
+}
+
+tr:nth-child(odd)
+{background-color: #d0e0d9 ;
+}
+
+th
+{background-color: #a7b0b8  ;
+
+}
+
+.registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+  opacity: 0.9;
+
+}
+
+/*
+<input type="date" id="today" name="today" class="today"
+ Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+/* .remarks{
+} */
+
+</style>
+</head>
+<body>
+
+    <div>
+        <div class="tm-row pt-4">
+            <div class="tm-col-left">
+                <div class="tm-site-header media">
+                    <i class="fas fa- fa-3x mt-1 tm-logo"></i>
+                    <div class="media-body">
+                        <h1 class="tm-sitename text-uppercase">Safe & Strong</h1>
+                        <p class="tm-slogon">IT SOLUTIONS</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tm-col-right">
+                <nav class="navbar navbar-expand-lg" id="tm-main-nav">
+                    <button class="navbar-toggler toggler-example mr-0 ml-auto" type="button"
+                        data-toggle="collapse" data-target="#navbar-nav"
+                        aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span><i class="fas fa-bars"></i></span>
+                    </button>
+                    <div class="collapse navbar-collapse tm-nav" id="navbar-nav">
+                        <ul class="navbar-nav text-uppercase">
+                            <li class="nav-item active">
+                                <a class="nav-link tm-nav-link" href="/login">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link tm-nav-link" href="/superlogin">Admin</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link tm-nav-link" href="/contact">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+
+
+<h2 align="center">WORK SHEET</h2>
+
+    {% csrf_token%}
+{% for result in data %}
+
+     <P align="center">
+            <h3><b><center>
+                  {{result.name}}
+            </h3>
+      </b>
+     </P>
+
+    {% endfor %}
+     </center>
+
+
+
+<form action="work" method="POST">
+
+<!--   <input type="text" id="code" name="code">-->
+
+
+<div class="container mt-3">
+  <table class="table" align="center" >
+    <thead>
+      <tr>
+        <th>User</th>
+
+        <th>Date</th>
+
+        <th>Description</th>
+
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+
+
+    {% for result in data1 %}
+
+      <tr>
+        <td> {{ result.user}} </td>
+        <td> {{ result.currentdate }} </td>
+        <td>
+          <table>
+            <tr><td width="40%">9.30 - 10.30</td>
+                <td width="20%">{{ result.hour1}}</td>
+            </tr>
+            <tr><td width="40%">10.30 - 11.30</td>
+                <td width="80%">{{ result.hour1}}</td>
+            </tr>
+            <tr><td width="40%">11.30 - 12.30</td>
+                <td width="80%">{{ result.hour1}}</td>
+            </tr>
+            <tr><td width="40%">12.30 - 1.30</td>
+                 <td width="80%">{{ result.hour4}}</td>
+            </tr>
+            <tr><td width="40%">01.30 - 2.30</td>
+                 <td width="80%">{{ result.hour5}}</td>
+            </tr>
+            <tr><td width="40%">2.30 - 3.30</td>
+                <td width="80%">{{ result.hour1}}</td>
+            </tr>
+            <tr><td width="40%">3.30 - 4.30</td>
+                <td width="80%">{{ result.hour1}}</td>
+            </tr>
+            <tr><td width="40%">4.30 - 5.30</td>
+                <td width="80%">{{ result.hour1}}</td>
+            </tr>
+          </table>
+        </td>
+        <td style="color: darkred" > <b>{{result.r1}}<br>{{result.r2}}<br>{{result.r3}}<br>{{result.r4}}<br>{{result.r5}}<br>{{result.r6}}<br>{{result.r7}}<br>{{result.r8}}</b></td>
+
+
+      </tr>
+
+    {% endfor %}
+
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
