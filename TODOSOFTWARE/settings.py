@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-import django_heroku
 from pathlib import Path
 # import os
 
@@ -37,9 +36,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure--pl^j7xzns2xf%fbrmvl5agvf2hm5-*-j=#ofjutvlc49bu9_7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','todosoftware.herokuapp.com']
+ALLOWED_HOSTS = []
 
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
@@ -153,5 +152,3 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'klabbersports@gmail.com'
 EMAIL_HOST_PASSWORD = 'klabber@123'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
-
-django_heroku.settings(locals())
