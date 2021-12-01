@@ -12,10 +12,11 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
+django_heroku.settings(locals)()
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
@@ -39,6 +40,8 @@ SECRET_KEY = 'django-insecure--pl^j7xzns2xf%fbrmvl5agvf2hm5-*-j=#ofjutvlc49bu9_7
 DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1','todosoftware.herokuapp.com']
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # Application definition
