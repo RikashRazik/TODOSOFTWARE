@@ -9,14 +9,14 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import django_heroku
 from pathlib import Path
 import os
-import django_heroku
+
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-django_heroku.settings(locals)()
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
@@ -153,3 +153,5 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'klabbersports@gmail.com'
 EMAIL_HOST_PASSWORD = 'klabber@123'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+django_heroku.settings(locals())
