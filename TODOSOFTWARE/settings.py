@@ -9,21 +9,21 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-import django_heroku
+# import django_heroku
 from pathlib import Path
-import os
+# import os
 
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_URL = '/static/'
 
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, 'static'),
+# )
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -41,7 +41,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1','todosoftware.herokuapp.com']
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # Application definition
@@ -154,4 +154,4 @@ EMAIL_HOST_USER = 'klabbersports@gmail.com'
 EMAIL_HOST_PASSWORD = 'klabber@123'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
